@@ -11,14 +11,14 @@
 ## Grupo 27
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Felipe Augusto da Silva</a>
+- <a href="www.linkedin.com/in/felipe-silva-363682213">Felipe Augusto da Silva</a>
 
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+- <a href="https://www.linkedin.com/in/nicollycrsouza/">Nicolly Candida Rodrigues de Souza</a>
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi</a>
 
 
 ## 📜 Descrição
