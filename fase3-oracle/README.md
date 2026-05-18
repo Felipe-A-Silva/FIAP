@@ -7,3 +7,15 @@ Após a importação, foram realizadas consultas SQL para análise dos dados, pe
 
 Essa etapa tem como objetivo integrar os dados gerados no sistema IoT com um banco de dados relacional, possibilitando análises mais estruturadas e preparação para aplicações de Data Science e tomada de decisão na agricultura inteligente.
 
+
+## 📷 Prints do Oracle SQL Developer
+
+### Conexão
+![Conexão Oracle](assets/print-select.png)
+
+### Tabela importada
+![Tabela](assets/print-irrigacao-on.png)
+
+### Consulta SQL
+![Query](assets/print-umidade-baixa.png)
+
