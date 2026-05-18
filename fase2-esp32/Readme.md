@@ -7,3 +7,7 @@ Foram utilizados sensores para representar diferentes variáveis agrícolas: o D
 A lógica implementada define que a irrigação deve ser ativada quando a umidade do solo estiver abaixo do ideal ou quando os níveis de nutrientes e pH estiverem fora da faixa considerada adequada para a cultura simulada. A saída do sistema é representada por um relé, que simula o acionamento de uma bomba de irrigação.
 
 Essa fase introduz conceitos de Internet das Coisas (IoT), automação e tomada de decisão baseada em sensores, servindo como base para a integração com banco de dados na fase seguinte do projeto.
+
+## 📷 Circuito da Fase 2
+
+![Circuito ESP32](assets/fase2-circuito.png)
