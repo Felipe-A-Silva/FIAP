@@ -10,4 +10,4 @@ Essa fase introduz conceitos de Internet das Coisas (IoT), automação e tomada 
 
 ## 📷 Circuito da Fase 2
 
-![Circuito](assets/circuito.png)
+![circuito]("assets/circuito.png")
