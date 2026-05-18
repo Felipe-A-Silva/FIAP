@@ -35,6 +35,7 @@ O projeto foi organizado da seguinte forma:
 - fase1-python: código da primeira fase do sistema em Python
 - fase2-esp32: simulação IoT com ESP32 e sensores
 - fase3-oracle: importação e análise de dados em banco Oracle
+- assets: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório.
 
 As demais pastas do template original não foram utilizadas neste projeto, pois não foram necessárias para a implementação.
 
