@@ -10,4 +10,4 @@ Essa fase introduz conceitos de Internet das Coisas (IoT), automação e tomada 
 
 ## 📷 Circuito da Fase 2
 
-![Circuito ESP32](fase2-esp32/assets/ESP32.png)
+![Circuito ESP32](FIAP/fase2-esp32/assets/ESP32.png)
