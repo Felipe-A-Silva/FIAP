@@ -8,11 +8,44 @@ Após a importação, foram realizadas consultas SQL para análise dos dados, pe
 Essa etapa tem como objetivo integrar os dados gerados no sistema IoT com um banco de dados relacional, possibilitando análises mais estruturadas e preparação para aplicações de Data Science e tomada de decisão na agricultura inteligente.
 
 
-## 📷 Prints do Oracle SQL Developer
+## 📷 Prints do passo a passo realizado para a criação do banco de dados
+
+Criando o Banco de dados
+
+![Conexão Oracle](../assets/Criacao-bd.png)
+
+Adicionando o arquivo .csv feito na FASE 2
+
+![Conexão Oracle](../assets/visualizacao-dados.png)
+
+Adicionando nome da nova tabela
+
+![Conexão Oracle](../assets/metodo-importacao.png)
+
+Colunas Selecionadas
+
+![Conexão Oracle](../assets/colunas-bd.png)
+
+Mensagem de confirmação que a tabela foi criada com sucesso
+
+![Conexão Oracle](../assets/mensagem-finalizado.png)
+
+
+
+
+
+## 📷 Prints SELECT do Oracle SQL Developer
+
+Select mostrando todos os dados
 
 ![Conexão Oracle](../assets/print-select.png)
 
+Select mostrando saída de quando a irrigação está ligada
+
 ![Tabela](../assets/print-irrigacao-on.png)
 
+Select mostrando saída de quando a umidade está baixa
+
 ![Query](../assets/print-umidade-baixa.png)
+
 
