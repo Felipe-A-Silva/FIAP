@@ -10,12 +10,9 @@ Essa etapa tem como objetivo integrar os dados gerados no sistema IoT com um ban
 
 ## 📷 Prints do Oracle SQL Developer
 
-### Conexão
-![Conexão Oracle](assets/print-select.png)
+![Conexão Oracle](../assets/print-select.png)
 
-### Tabela importada
-![Tabela](assets/print-irrigacao-on.png)
+![Tabela](../assets/print-irrigacao-on.png)
 
-### Consulta SQL
-![Query](assets/print-umidade-baixa.png)
+![Query](../assets/print-umidade-baixa.png)
 
