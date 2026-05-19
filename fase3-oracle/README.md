@@ -48,7 +48,8 @@ Select mostrando saída de quando a umidade está baixa
 
 ![Query](../assets/print-umidade-baixa.png)
 
-## Link do Vídeo explicativo
+## 🎥 Vídeo Demonstrativo
 
-![Video](https://youtu.be/PnWUtswbAZo)
+[Assistir vídeo](https://www.youtube.com/watch?v=PnWUtswbAZo)
+
 
