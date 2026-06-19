@@ -1,0 +1,112 @@
+import streamlit as st
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+# Configurações da Página
+st.title("💧 Previsão de Irrigação")
+
+df = pd.read_csv("produtos_agricolas.csv")
+
+X = df[['N', 'P', 'K', 'temperature', 'ph', 'rainfall']]
+y = df['humidity']
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
+)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Entrada do usuário
+st.header("Dados da Área Agrícola")
+
+N = st.number_input(
+    "Nitrogênio (N)",
+    min_value=int(df["N"].min()),
+    max_value=int(df["N"].max()),
+    value=int(df["N"].mean())
+)
+
+P = st.number_input(
+    "Fósforo (P)",
+    min_value=int(df["P"].min()),
+    max_value=int(df["P"].max()),
+    value=int(df["P"].mean())
+)
+
+K = st.number_input(
+    "Potássio (K)",
+    min_value=int(df["K"].min()),
+    max_value=int(df["K"].max()),
+    value=int(df["K"].mean())
+)
+
+temperature = st.number_input(
+    "Temperatura (°C)",
+    min_value=float(df["temperature"].min()),
+    max_value=float(df["temperature"].max()),
+    value=float(df["temperature"].mean())
+)
+
+ph = st.number_input(
+    "pH",
+    min_value=float(df["ph"].min()),
+    max_value=float(df["ph"].max()),
+    value=float(df["ph"].mean())
+)
+
+rainfall = st.number_input(
+    "Precipitação (mm)",
+    min_value=float(df["rainfall"].min()),
+    max_value=float(df["rainfall"].max()),
+    value=float(df["rainfall"].mean())
+)
+
+# Botão para previsão
+if st.button("Realizar Previsão"):
+
+    dados = pd.DataFrame({
+    'N': [N],
+    'P': [P],
+    'K': [K],
+    'temperature': [temperature],
+    'ph': [ph],
+    'rainfall': [rainfall]
+})
+
+    umidade_prevista = model.predict(dados)[0]
+
+    st.subheader("Previsão de Umidade do Solo")
+    st.write(f"A umidade prevista do solo é: {umidade_prevista:.2f}%")
+
+    st.header("Recomendação de Irrigação")
+
+    if umidade_prevista < 40:
+
+        st.error("🔴 Umidade baixa")
+
+        st.write(
+        "Recomendação: aumentar o volume de irrigação em aproximadamente 20%."
+    )
+
+    elif umidade_prevista < 70:
+
+        st.warning("🟡 Umidade moderada")
+
+        st.write(
+        "Recomendação: manter o volume atual e monitorar o solo."
+    )
+
+    else:
+
+        st.success("🟢 Umidade adequada")
+
+        st.write(
+        "Recomendação: reduzir ou suspender temporariamente a irrigação."
+    )
