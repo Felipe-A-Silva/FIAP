@@ -1,0 +1,117 @@
+import streamlit as st
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import plotly.express as px
+from sklearn.metrics import (
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score
+)
+
+st.title("🤖 Modelagem Preditiva")
+
+st.write("""
+Variável alvo: Umidade do Solo
+
+Variáveis preditoras:
+- Nitrogênio (N)
+- Fósforo (P)
+- Potássio (K)
+- Temperatura
+- pH
+- Precipitação
+""")
+
+df = pd.read_csv("produtos_agricolas.csv")
+
+# Variáveis de entrada
+X = df[['N', 'P', 'K', 'ph', 'temperature', 'rainfall']]
+
+# Variável alvo
+y = df['humidity']
+
+
+st.subheader("Variáveis utilizadas")
+
+st.write("Entradas (X):")
+st.write(X.head())
+
+st.write("Saída (y):")
+st.write(y.head())
+
+# Divisão dos dados em treino e teste
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
+)
+
+st.subheader("Divisão dos Dados")
+
+st.write(f"Treino: {len(X_train)} registros")
+st.write(f"Teste: {len(X_test)} registros")
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Fazer previsões
+y_pred = model.predict(X_test)
+
+st.subheader("Primeiras Previsões")
+
+resultado = pd.DataFrame({
+    "Valor Real": y_test.values[:10],
+    "Valor Previsto": y_pred[:10]
+})
+
+st.dataframe(resultado)
+
+
+
+mae = mean_absolute_error(y_test, y_pred)
+
+mse = mean_squared_error(y_test, y_pred)
+
+rmse = mse ** 0.5
+
+r2 = r2_score(y_test, y_pred)
+
+# Exibir as métricas
+st.subheader("Métricas do Modelo")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.metric("MAE", f"{mae:.4f}")
+    st.metric("RMSE", f"{rmse:.4f}")
+
+with col2:
+    st.metric("MSE", f"{mse:.4f}")
+    st.metric("R²", f"{r2:.4f}")
+
+# Gráfico de comparação entre valores reais e previstos
+st.subheader("Comparação entre Valores Reais e Previstos")
+
+grafico_df = pd.DataFrame({
+    "Real": y_test,
+    "Previsto": y_pred
+})
+
+# Gráfico de dispersão
+fig = px.scatter(
+    grafico_df,
+    x="Real",
+    y="Previsto",
+    title="Valores Reais vs Valores Previstos",
+    labels={
+        "Real": "Umidade Real",
+        "Previsto": "Umidade Prevista"
+    }
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
+
+
